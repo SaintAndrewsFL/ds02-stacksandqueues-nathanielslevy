@@ -1,9 +1,42 @@
+import java.lang.reflect.Array;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+
+public class StackArray<T> {
+
+    private ArrayList<T> arr = new ArrayList();
 
 
-public class StackArray {
+    public T push(T item) {
+        arr.add(item);
+        return item;
+    }
+
+    public T pop() {
+        T item = arr.get(size()-1);
+        arr.remove(size()-1);
+        return item;
+    }
+
+    public T peek() {
+        return arr.get(0);
+    }
+
+    public void display() {
+        for (T element : arr) {
+            System.out.println(element);
+        }
+    }
+
+    public int size() {
+        return arr.size();
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
 
 }
-
 
 /*
 E push(E item) - Pushes an item onto the top of this stack.

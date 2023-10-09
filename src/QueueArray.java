@@ -1,5 +1,41 @@
+import java.lang.reflect.Array;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 
-public class QueueArray {
+public class QueueArray<T> {
+
+    private ArrayList<T> arr = new ArrayList();
+
+
+    public T enqueue(T item) {
+        arr.add(item);
+        return item;
+    }
+
+    public T dequeue() {
+        T item = arr.get(0);
+        arr.remove(0);
+        return item;
+    }
+
+    public T peek() {
+        return arr.get(0);
+    }
+
+    public void display() {
+        for (int i=0; i<arr.size(); i++) {
+            System.out.print(i);
+        }
+    }
+
+    public int size() {
+        return arr.size();
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
 }
 
 
